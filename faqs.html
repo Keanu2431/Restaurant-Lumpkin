@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lumpkin's Delights</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+      integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body style="background-color: var(--background-color-light)">
+    <nav
+      class="navbar navbar-expand-lg"
+      style="background-color: var(--background-color)"
+    >
+      <div class="container-fluid">
+        <a
+          style="color: var(--primary-color)"
+          class="navbar-brand"
+          href="index.html"
+          >lumpkin's delights</a
+        >
+        <button
+          style="color: var(--secondary-color)"
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="menu.html"
+                style="color: var(--secondary-color)"
+                >Menu</a
+              >
+            </li>
+            <li class="nav-item">
+              <button
+                type="button"
+                class="btn btn-primary nav-link"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                id="reserve-button"
+              >
+                Reservations
+              </button>
+            </li>
+            <li style="color: var(--secondary-color)" class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="color: var(--secondary-color)"
+              >
+                about
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    style="color: var(--secondary-color)"
+                    class="dropdown-item"
+                    href="hours.html"
+                    >hours</a
+                  >
+                </li>
+                <li>
+                  <a
+                    style="color: var(--secondary-color)"
+                    class="dropdown-item"
+                    href="private.html"
+                    >private booking</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a
+                    style="color: var(--secondary-color)"
+                    class="dropdown-item"
+                    href="site-map.html"
+                    >sitemap</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              class="btn btn-outline-success"
+              type="submit"
+              :hover="background-color=black"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- on load pop-up -->
+    <!-- Button trigger modal -->
+    <!-- <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#popUpModal"
+      style="display: none"
+      id="onLoadButton"
+    >
+      Launch demo modal
+    </button> -->
+
+    <!--pop Modal -->
+    <!-- <div
+      class="modal fade"
+      id="popUpModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content private-modal">
+          <div class="modal-header">
+            <h5 class="modal-title pop-up-title" id="exampleModalLabel">
+              events have returned to the dinning room
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h3 style="color: var(--secondary-color); font-size: 36px">
+              back by popular demand, lumpkin delight's have decided to bring
+              back the Trendsettas for weekly performances. wheter your in the
+              mood for a slow song to relieve some work stress or to swoon over
+              your lover they've got you covered.
+            </h3>
+            <img
+              src="restaurant/performer.jpg"
+              alt=""
+              srcset=""
+              style="width: 750px"
+            />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="news-button">
+              See More
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!--  -->
+    <!-- reserve Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Make a Reservation
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="reservation-container">
+              <form action="" id="form">
+                <select class="select" name="date" id="date">
+                  <option disabled selected>Date</option>
+                  <option value="1">August 5th</option>
+                  <option value="2">August 6th</option>
+                  <option value="3">August 7th</option>
+                  <option value="4">August 12th</option>
+                  <option value="5">August 13th</option>
+                  <option value="6">August 14th</option>
+                  <option value="0">Join Waitlist</option>
+                </select>
+                <select class="select" name="time" id="time">
+                  <option disabled selected>Time</option>
+                  <option value="">2P.M</option>
+                  <option value="">3P.M</option>
+                  <option value="">4P.M</option>
+                  <option value="">6P.M</option>
+                  <option value="">7P.M</option>
+                  <option value="">8P.M</option>
+                  <option value="">9P.M</option>
+                  <option value="">10P.M</option>
+                  <option value="">11P.M</option>
+                  <option value="">12A.M</option>
+                  <option value="">1A.M</option>
+                </select>
+                <select class="select" name="guest" id="guest">
+                  <option disabled selected>Guest</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="0">6+</option>
+                </select>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- home-slider -->
+    <div
+      id="carouselExampleSlidesOnly"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="Restaurant/dinner1.jpeg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="Restaurant/dinner2.jpeg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="Restaurant/dinner3.jpeg" class="d-block w-100" alt="..." />
+        </div>
+      </div>
+    </div>
+    <!-- faqs -->
+    <h1 class="title" style="font-size: 56px">frequently asked questions</h1>
+    <div class="faq-container">
+      <div class="faq-inner">
+        <!-- accordian -->
+        <div class="accordian-container">
+          <h1 class="title" style="text-align: start; font-size: 42px">
+            restaurant info
+          </h1>
+          <div class="accordian">
+            <h3 class="accordian-tag" >
+              what are the hours of operation for lumpkin's delights?
+            </h3>
+            <h2 class="accordian-text hidden" >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
+              sed aliquid non facere officiis velit eaque quibusdam mollitia
+              corrupti dolor, repellat temporibus iste numquam veritatis vero
+              modi possimus asperiores laudantium.
+            </h2>
+          </div>
+          <div class="accordian">
+            <h3 class="accordian-tag" >holiday hours</h3>
+            <h2 class="accordian-text hidden" >
+              we are closed on Thanksgiving Day and Christmas Day to allow our
+              team members to spend time with their family and friends.
+              Depending on the amount of business on the day before these
+              holidays, the restaurants may close early. We leave this decision
+              to the discretion of the management team. Please contact the
+              restaurant directly for the scheduled closing time the day before
+              Thanksgiving or Christmas Eve.
+            </h2>
+          </div>
+          <div class="accordian">
+            <h3 class="accordian-tag">
+              does lumpkin's delights offer catering?
+            </h3>
+            <h2 class="accordian-text hidden">
+              Our Catering Menu features generous family-sized Italian meals
+              available for pickup that make party planning easy. So, for your
+              next family dinner, special party or office gathering let Olive
+              Garden help you delight guests with delicious Italian specialties.
+              For your convenience, we now offer delivery of Catering orders
+              $100 or greater. All orders are subject to a 10% delivery fee up
+              to $500, then 5% for every dollar thereafter. Learn more about
+              Catering Delivery.
+            </h2>
+          </div>
+          <div class="accordian">
+            <h3 class="accordian-tag">do you guys deliver?</h3>
+            <h2 class="accordian-text hidden">
+              even though the food industry is leaning towards delivery, we
+              currently don't deliver. as we want our brand to be focused on our
+              customer's experience which we can control only by you coming in
+              and eating our food fresh from the stove.
+            </h2>
+          </div>
+          <div class="accordian">
+            <h3 class="accordian-tag">how do you guys handle birthdays?</h3>
+            <h2 class="accordian-text hidden">
+              guests can receive a complimentary dessert on their birthday when
+              they dine with us. To receive other great offers, simply sign up
+              for our eClub and be sure to include information like your
+              birthdate and address so we can keep you updated on the latest
+              Olive Garden news and send you special coupons for your local
+              Olive Garden.
+            </h2>
+          </div>
+          <!-- menu faq -->
+          <h1 class="title" style="text-align: start; font-size: 42px">
+            lumpkin's delights menu
+          </h1>
+          <div class="accordian">
+            <h3 class="accordian-tag">
+              how do i sell a recipe to lumpkin's delights
+            </h3>
+            <h2 class="accordian-text hidden">
+              While we delight in accepting menu suggestions, we cannot accept
+              recipes. We work closely with our chefs to bring the freshest,
+              most flavorful dishes inspired by Italy to our restaurants.
+            </h2>
+          </div>
+          <div class="accordian">
+            <h3 class="accordian-tag">
+              do your cooking oils contain trans fat?
+            </h3>
+            <h2 class="accordian-text hidden">
+              while we cannot garuntee because of our ever changing menu, we try
+              our best to make sure Our cooking oils do not contain trans fat.
+            </h2>
+          </div>
+          <div class="accordian">
+            <h3 class="accordian-tag">Do you have gluten free menu items?</h3>
+            <h2 class="accordian-text hidden">
+              no we don't focus on gluten free aspect of items to bring the best
+              possible flavours possible to our customers.
+            </h2>
+          </div>
+          <!-- donation -->
+          <h1 class="title" style="text-align: start; font-size: 42px">
+            donations
+          </h1>
+          <div class="accordian">
+            <h3 class="accordian-tag">Do you accept donations?</h3>
+            <h2 class="accordian-text hidden">
+              no we don't take donations for ourselves, the best way to donate
+              to us is to tip our waiters. <br />
+              However, lumpkin's delights donates to charitable causes that
+              benefit the community. Donation requests can be submitted in
+              writing to the general manager of your local Olive Garden. This
+              includes requests for donations of gift certificates or food.
+              <br />
+              Request should be on your organization's official letterhead,
+              including the organizations full name, address, phone and fax
+              numbers. State your donation request, when it is needed and how it
+              will benefit the community. Please submit written requests 30 days
+              prior to the date the donation is needed. Unfortunately, it's not
+              possible to honor every request that we receive. Please accept our
+              apology in advance if we are not able to fulfill your request.
+            </h2>
+          </div>
+          <!-- employement -->
+          <h1 class="title" style="text-align: start; font-size: 42px">
+            employement
+          </h1>
+          <div class="accordian">
+            <h3 class="accordian-tag">how can i get a job here?</h3>
+            <h2 class="accordian-text hidden">
+              we are always happy to add more members to our team at lumpkin's
+              delights.Please check our
+              <a href="careers.html" class="link">careers</a> page to learn more
+              and to apply online for both Management and Team Member positions
+              at any Olive Garden Restaurant.
+            </h2>
+          </div>
+          <div class="accordian">
+            <h3 class="accordian-tag">
+              how can i access to my employment information?
+            </h3>
+            <h2 class="accordian-text hidden">
+              If you're looking for information pertaining to your own
+              employment, please contact the following departments directly by
+              telephone.
+              <ul style="color: var(--secondary-color)">
+                <li style="text-align: start; color: var(--secondary-color)">
+                  Benefits: 888-374-0000
+                </li>
+                <li style="text-align: start; color: var(--secondary-color)">
+                  Payroll: 888-374-0000
+                </li>
+                <li style="text-align: start; color: var(--secondary-color)">
+                  Employee Relations: 888-374-0000
+                </li>
+              </ul>
+            </h2>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+      <div class="extra">
+        <div class="extra-item">
+          <h2>most popular FAQS</h2>
+
+          <ul>
+            <li style="text-align:left ;">
+              <a href="hours.html" class="link-pop"
+                >What Are The Hours Of Operation For Lumpkin's Delights?</a
+              >
+            </li>
+
+            <li style="text-align:left ;">
+              <a href="careers.html" class="link-pop"
+                >How Can I Get A Job Here?</a
+              >
+            </li>
+
+            <li style="text-align:left ;">
+              <a href="contact.html" class="link-pop"
+                >How can we be contacted?</a
+              >
+            </l>
+          </ul>
+        </div>
+        <div class="extra-item">
+          <h2>media Relations</h2>
+
+         <div class="inner-media">
+          <h3 >for members of the media:
+            <br>
+            contact: keanu lumpkin <br>
+          </h3>
+<a href="mailto:email@example.com">klumpkin3@gmail.com</a>
+<h3>1-646-938-9987</h3>
+<br>
+          <h3 >for members of the public:
+            <br>
+            contact: kato lumpkin <br>
+          </h3>
+<a href="mailto:email@example.com">potatoJune@gmail.com</a>
+<h3>1-646-342-7765</h3>
+         </div>
+        </div>
+        <br />
+        <div class="extra-item" style="border: none;">
+          <h2>cant find answers to your questions?</h2>
+          <a href="contact.html">
+            <button class="btn btn-outline-success" type="button">
+              Contact Us
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- make bottom-header dissapear when we get to footer -->
+    <div class="bottom-header">
+      <h1>Fri-Sun:2P.M-4A.M</h1>
+      <h1>333E 999th street flossy,NY 11207</h1>
+      <a href="tel:6469389987" class="number"><h1>+1-646-938-9987</h1></a>
+    </div>
+    <!-- footer -->
+    <section class="footer">
+      <div class="column">
+        <ul>
+          <li>
+            <a href="careers.html" class="tag">careers</a>
+          </li>
+          <li>
+            <a href="news.html" class="tag">news</a>
+          </li>
+          <li>
+            <a href="faqs.html" class="tag">FAQS</a>
+          </li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul>
+          <li>
+            <a href="privacy.html" class="tag">privacy policy</a>
+          </li>
+          <li>
+            <a href="about-us.html" class="tag">about us</a>
+          </li>
+          <li>
+            <a href="contact.html" class="tag">contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="column form">
+        <h1>subscribe to newsletter</h1>
+        <form action="">
+          <input
+            type="email"
+            name="email-sub"
+            id="email-sub"
+            placeholder="email address"
+          />
+          <button id="button-sub" type="submit">›</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+      integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+      crossorigin="anonymous"
+    ></script>
+    <!-- scripts -->
+  </body>
+</html>
